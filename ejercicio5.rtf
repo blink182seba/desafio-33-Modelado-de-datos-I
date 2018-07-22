@@ -1,0 +1,13 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\csgray\c0;\csgray\c100000;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \cb3 \CocoaLigature0 create database ex17s1p5;\
+create table Cliente(id serial primary key, nombre varchar(30) not null);\
+create table Factura(id serial primary key, nombre varchar(30) not null, cliente_id int not null references cliente(id));\
+create table bodega(id serial primary key, nombre varchar(30) not null);\
+create table producto(id serial primary key, nom_prod varchar(30) not null, bodega_id int not null references bodega(id));\
+create table Factura_productos(product_id int not null references producto(id), factura_id int not null references factura(id));}
